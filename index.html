@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">Logo</a>
+        <ul>
+            <li class="ativo"> <a href="#">Home</a></li>
+            <li> <a href="#">About</a> </li>
+            <li> <a href="#">Work</a> </li>
+            <li> <a href="#">Contact</a> </li>
+        </ul>
+    </header>
+    <section>
+        <img src="./img/stars.png" id="star">
+        <img src="./img/moon.png" id="moon">
+        <img src="./img/mountains_behind.png" id="mountain_behind">
+        <h2 id="text">Moon Light</h2>
+        <a href="#section-text" id="btn">Explore</a>
+        <img src="./img/mountains_front.png" id="mountain_front">
+    </section>
+    <div class="section-text" id='section-text'> 
+        <div class="text-scroll">
+
+            <h2>Parallax Scrolling Effect</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla obcaecati minus optio, architecto eligendi quibusdam dignissimos totam ipsum voluptatibus laborum non labore id impedit nisi voluptates harum veritatis? Dignissimos, tenetur! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est perferendis, dolorum nesciunt eveniet ipsam in iure incidunt. Nostrum quae, saepe similique tempore iusto quaerat enim commodi error reiciendis iure quas? </p>
+            <br>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere tenetur praesentium voluptatibus sapiente fuga! Voluptas consectetur dicta magni aliquid quas aspernatur, assumenda ad asperiores officia voluptatem. Numquam non architecto magni? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut unde corporis architecto perferendis animi sed amet quisquam praesentium, aperiam nisi? Doloribus, numquam! Architecto, sapiente? Officia corrupti adipisci magni laboriosam! Maxime.</p>
+        </div>
+        <img id="img-p" src="./img/moon.jpeg" class="photo-flex" alt="">
+    </div>
+
+    <script>
+        var star = document.querySelector('#star')
+        var moon = document.querySelector('#moon')
+        var mountainBehind = document.querySelector('#mountain_behind')
+        var texto = document.getElementById('text')
+        var btn = document.querySelector('#btn')
+        var mountainFront = document.querySelector('#mountain_front')
+        var section = document.querySelector('section')
+        // estrelas se movendo
+        
+        window.addEventListener('scroll', function(){
+            var texto = document.getElementById('text')
+            var valor = window.scrollY;
+            star.style.left = valor * 0.25 + 'px';
+            moon.style.top = valor * 0.6 + 'px';
+            mountainBehind.style.left = valor * 0.4 + 'px';
+            mountainFront.style.right = valor * 0.4 + 'px';
+            texto.style.left = valor + 200 + 'px';
+        })
+    </script>
+</body>
+</html>
